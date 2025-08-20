@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonHeart - Start A Change Reaction | Holistic Wellness & Transformation</title>
+    <meta name="description" content="WonHeart's mission is to Educate, Inspire and Transform YOU to Start A Change Reaction and become The Best You. Discover Reiki healing, wellness interviews, and holistic health practices.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Natural & Organic Color Palette */
+            --primary-green: #4a7c59;
+            --accent-green: #6b9b7c;
+            --light-green: #a8d4b8;
+            --soft-cream: #f7f5f3;
+            --warm-beige: #e8e1d8;
+            --sage-green: #9caf88;
+            --earth-brown: #8b7355;
+            --forest-dark: #2d4738;
+            --warm-white: #fefcfa;
+            --soft-gray: #6b7280;
+            --accent-orange: #d97706;
+            --gentle-blue: #7dd3fc;
+            
+            /* Typography */
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Playfair Display', serif;
+            
+            /* Spacing & Layout */
+            --container-max: 1200px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(45, 71, 56, 0.1);
+            --shadow-md: 0 8px 32px rgba(45, 71, 56, 0.15);
+            --shadow-lg: 0 16px 48px rgba(45, 71, 56, 0.2);
+            --shadow-glow: 0 0 32px rgba(107, 155, 124, 0.3);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--forest-dark);
+            background-color: var(--warm-white);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+        
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(254, 252, 250, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: var(--spacing-sm) 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(107, 155, 124, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(254, 252, 250, 0.98);
+            box-shadow: var(--shadow-sm);
+            padding: var(--spacing-xs) 0;
+        }
+        
+        .nav-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo h2 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--forest-dark);
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+            transition: width 0.3s ease;
+            border-radius: var(--radius-sm);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-green);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                135deg, 
+                rgba(74, 124, 89, 0.8) 0%, 
+                rgba(107, 155, 124, 0.6) 50%,
+                rgba(45, 71, 56, 0.9) 100%
+            ),
+            url('./forest-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: calc(80px + var(--spacing-lg)) var(--spacing-sm) var(--spacing-lg);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(45, 71, 56, 0.3);
+            backdrop-filter: blur(1px);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+            max-width: var(--container-max);
+            width: 100%;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .hero-text {
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+        
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(45, 71, 56, 0.8);
+        }
+        
+        .title-line {
+            display: block;
+        }
+        
+        .title-line.accent {
+            background: linear-gradient(135deg, var(--light-green), var(--sage-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-lg);
+            max-width: 500px;
+            text-shadow: 1px 1px 2px rgba(45, 71, 56, 0.6);
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--accent-green);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent-green);
+            color: white;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            animation: slideInRight 1s ease-out 0.6s both;
+        }
+        
+        .hero-card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 8px 32px rgba(45, 71, 56, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+        
+        .card-glow {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle, 
+                rgba(168, 212, 184, 0.2), 
+                transparent 70%
+            );
+            animation: rotate 15s linear infinite;
+        }
+        
+        .hero-icon {
+            font-size: 6rem;
+            color: var(--light-green);
+            position: relative;
+            z-index: 2;
+            animation: pulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(45, 71, 56, 0.4));
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: var(--spacing-md);
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+        
+        .mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            margin: 0 auto var(--spacing-xs);
+            position: relative;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .wheel {
+            width: 3px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+        
+        @keyframes scroll {
+            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(16px); }
+        }
+        
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--forest-dark);
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+            border-radius: var(--radius-sm);
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--soft-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        
+        .about {
+            padding: var(--spacing-xl) var(--spacing-sm);
+            background: var(--warm-white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .text-card {
+            background: var(--soft-cream);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--accent-green);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .text-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .text-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+        
+        .visual-card {
+            background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-align: center;
+            color: white;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .visual-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .visual-card:hover {
+            transform: translateY(-8px) rotate(2deg);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .visual-card i {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-xs);
+            display: block;
+        }
+        
+        .visual-card h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .card-1 { animation-delay: 0.1s; }
+        .card-2 { animation-delay: 0.2s; }
+        .card-3 { animation-delay: 0.3s; }
+        .card-4 { animation-delay: 0.4s; }
+        
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        
+        .services {
+            padding: var(--spacing-xl) var(--spacing-sm);
+            background: linear-gradient(135deg, var(--soft-cream) 0%, var(--warm-beige) 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .service-card {
+            background: var(--warm-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(107, 155, 124, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-green);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--forest-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .service-card p {
+            color: var(--soft-gray);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            justify-content: center;
+        }
+        
+        .feature-tag {
+            background: rgba(107, 155, 124, 0.1);
+            color: var(--primary-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* ============================================
+           TEAM SECTION
+           ============================================ */
+        
+        .team {
+            padding: var(--spacing-xl) var(--spacing-sm);
+            background: var(--warm-white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .team-card {
+            background: var(--soft-cream);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .team-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .team-image {
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent-green), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .image-placeholder {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.7;
+        }
+        
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(74, 124, 89, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover .team-overlay {
+            opacity: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: white;
+            color: var(--primary-green);
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: var(--spacing-lg);
+        }
+        
+        .team-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--forest-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .team-role {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .team-description {
+            color: var(--soft-gray);
+            font-size: 0.875rem;
+        }
+        
+        /* ============================================
+           CALL TO ACTION SECTION
+           ============================================ */
+        
+        .cta {
+            padding: var(--spacing-xl) var(--spacing-sm);
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            color: white;
+        }
+        
+        .cta-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .cta-text p {
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta .btn-primary {
+            background: white;
+            color: var(--primary-green);
+        }
+        
+        .cta .btn-outline {
+            border-color: white;
+            color: white;
+        }
+        
+        .cta .btn-outline:hover {
+            background: white;
+            color: var(--primary-green);
+        }
+        
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        
+        .contact {
+            padding: var(--spacing-xl) var(--spacing-sm);
+            background: var(--soft-cream);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+        }
+        
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--warm-white);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-sm);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .info-content h3 {
+            font-family: var(--font-heading);
+            color: var(--forest-dark);
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-content p {
+            color: var(--soft-gray);
+        }
+        
+        .social-media {
+            margin-top: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .social-media h3 {
+            font-family: var(--font-heading);
+            color: var(--forest-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            margin: 0 var(--spacing-xs);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-form {
+            background: var(--warm-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+            color: var(--forest-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(107, 155, 124, 0.2);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--warm-white);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(107, 155, 124, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        
+        .footer {
+            background: var(--forest-dark);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-sm) var(--spacing-md);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .footer-section h3,
+        .footer-section h4 {
+            font-family: var(--font-heading);
+            color: var(--light-green);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .footer-section p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--light-green);
+            padding-left: var(--spacing-xs);
+        }
+        
+        .footer-section .social-links a {
+            margin-right: var(--spacing-sm);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(107, 155, 124, 0.3);
+            padding-top: var(--spacing-md);
+            text-align: center;
+            opacity: 0.7;
+        }
+        
+        .disclaimer {
+            font-size: 0.875rem;
+            margin-top: var(--spacing-sm);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--warm-white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--spacing-lg);
+            }
+            
+            .hero-card {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .hero-icon {
+                font-size: 4rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .visual-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-xs);
+            }
+            
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.875rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: calc(80px + var(--spacing-md)) var(--spacing-sm) var(--spacing-md);
+            }
+            
+            .hero-card {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .hero-icon {
+                font-size: 3rem;
+            }
+            
+            .visual-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Scroll animations */
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--soft-cream);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary-green), var(--accent-green));
+            border-radius: var(--radius-sm);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--forest-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>WonHeart</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Start A</span>
+                    <span class="title-line accent">Change Reaction</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Our Mission is to <strong>Educate</strong>, <strong>Inspire</strong> and <strong>Transform</strong> YOU to become The Best You through holistic wellness, Reiki healing, and mindful living.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Start Your Journey
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-heart"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-glow"></div>
+                    <i class="fas fa-heart hero-icon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About WonHeart</h2>
+                <p class="section-subtitle">Transforming lives through holistic wellness and compassionate care</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="text-card">
+                        <h3>Our Vision</h3>
+                        <p>To share interviews from people in their respective fields to spark a change for better health & well-being. We believe that change comes from within, and every person has the power to transform their life.</p>
+                    </div>
+                    <div class="text-card">
+                        <h3>Our Approach</h3>
+                        <p>Through a combination of ancient wisdom and modern practices, we offer Reiki healing, educational content, wellness interviews, and resources to help you on your journey to becoming the best version of yourself.</p>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-grid">
+                        <div class="visual-card card-1">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Natural Healing</h4>
+                        </div>
+                        <div class="visual-card card-2">
+                            <i class="fas fa-brain"></i>
+                            <h4>Mind-Body Connection</h4>
+                        </div>
+                        <div class="visual-card card-3">
+                            <i class="fas fa-users"></i>
+                            <h4>Community Support</h4>
+                        </div>
+                        <div class="visual-card card-4">
+                            <i class="fas fa-heart"></i>
+                            <h4>Compassionate Care</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive wellness solutions for your transformation journey</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Reiki Healing</h3>
+                    <p>Experience the transformative power of Reiki healing, a modality that can help heal trauma and promote deep wellness through energy work and intuitive healing practices.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Energy Healing</span>
+                        <span class="feature-tag">Trauma Recovery</span>
+                        <span class="feature-tag">Spiritual Wellness</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Wellness Interviews</h3>
+                    <p>Inspiring conversations with experts in health, wellness, and personal development. Learn from practitioners who share their knowledge to help you on your wellness journey.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Expert Insights</span>
+                        <span class="feature-tag">Live Sessions</span>
+                        <span class="feature-tag">Educational Content</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Children's Mental Health</h3>
+                    <p>Supporting children's mental health and development, especially in the post-COVID world. Expert guidance on child and adolescent development for parents and caregivers.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Child Development</span>
+                        <span class="feature-tag">Mental Health Support</span>
+                        <span class="feature-tag">Family Wellness</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Educational Resources</h3>
+                    <p>Access our library of self-care tips, healthy recipes, breathing techniques, and literacy programs designed to empower your personal growth and wellness journey.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Self-Care Guides</span>
+                        <span class="feature-tag">Healthy Living</span>
+                        <span class="feature-tag">Personal Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Practitioners</h2>
+                <p class="section-subtitle">Experienced professionals dedicated to your wellness journey</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Rachel Frauenholz</h3>
+                        <p class="team-role">Reiki Master Teacher/Practitioner</p>
+                        <p class="team-description">Trained in alternative healing practices and intuitive healing since 2002, became a Usui Reiki Master in 2008. Studied Peruvian shamanism with The Heart of the Healer Foundation.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Tanya Thomas</h3>
+                        <p class="team-role">Child and Adolescent Development B.A.</p>
+                        <p class="team-description">Specialist in supporting children's mental health, particularly in the post-COVID era. Provides expert guidance for parents and caregivers on child development.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Rev Diann Davisson</h3>
+                        <p class="team-role">Advanced Certified Grief Specialist</p>
+                        <p class="team-description">Clinical Certified Chaplain specializing in grief counseling and spiritual support during difficult times.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Nancy Eckert</h3>
+                        <p class="team-role">League of American Cyclist Instructor</p>
+                        <p class="team-description">Certified instructor specializing in cycling wellness, E-Bikes, and promoting active lifestyle for overall health and well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Start Your Change Reaction?</h2>
+                    <p>The Time Is NOW To Remember Who We Are! Join our community and begin your transformation journey today.</p>
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Consultation
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fab fa-youtube"></i>
+                        Watch WonHeart TV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Connect with us to begin your wellness journey</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>Santa Maria, CA 93454</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>info@wonheart.info</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Website</h3>
+                            <p>www.wonheart.info</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WonHeart</h3>
+                    <p>Educating, Inspiring, and Transforming lives through holistic wellness and compassionate care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Reiki Healing</a></li>
+                        <li><a href="#">Wellness Interviews</a></li>
+                        <li><a href="#">Children's Mental Health</a></li>
+                        <li><a href="#">Educational Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WonHeart. All rights reserved.</p>
+                <p class="disclaimer">WonHeart accepts no responsibility or liability whatsoever and the information contained in our website, videos, programs, services and/or products is for educational, informational & self-help purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for interactions will be added here
+        
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections for animations
+        document.querySelectorAll('section, .service-card, .team-card, .visual-card').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
