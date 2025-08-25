@@ -1,0 +1,28 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="appGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6b9b7c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9caf88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a8d4b8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#f7f5f3;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded square background -->
+  <rect x="8" y="8" width="144" height="144" rx="24" ry="24" fill="url(#appGradient)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  
+  <!-- Inner subtle glow -->
+  <rect x="12" y="12" width="136" height="136" rx="20" ry="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  
+  <!-- Heart icon in center -->
+  <path d="M80 120c-2.5 0-4.8-1-6.5-2.6C65.2 109.8 45 89.2 45 69c0-11 8.9-20 20-20 6.2 0 11.7 2.8 15 7.2C83.3 51.8 88.8 49 95 49c11.1 0 20 9 20 20 0 20.2-20.2 40.8-28.5 48.4C84.8 119 82.5 120 80 120z" 
+        fill="url(#heartGradient)" 
+        stroke="rgba(255,255,255,0.3)" 
+        stroke-width="1"/>
+  
+  <!-- Subtle highlight on top -->
+  <ellipse cx="80" cy="30" rx="40" ry="8" fill="rgba(255,255,255,0.1)"/>
+</svg>

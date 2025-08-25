@@ -123,6 +123,16 @@
             font-weight: 600;
         }
         
+        .nav-logo-img {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .nav-logo-img {
+            height: 40px;
+        }
+        
         .nav-menu {
             display: flex;
             gap: var(--spacing-md);
@@ -370,6 +380,102 @@
             z-index: 2;
             animation: pulse 3s ease-in-out infinite;
             filter: drop-shadow(0 4px 8px rgba(45, 71, 56, 0.4));
+        }
+        
+        /* Video Screenshot Image Styling */
+        .hero-video-img {
+            width: 420px;
+            height: 236px; /* 16:9 aspect ratio */
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            border-radius: 20px;
+            box-shadow: 
+                0 12px 48px rgba(45, 71, 56, 0.4),
+                0 0 0 4px rgba(255, 255, 255, 0.3),
+                0 0 0 8px rgba(168, 212, 184, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            animation: videoFloat 4s ease-in-out infinite;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: 
+                drop-shadow(0 12px 32px rgba(45, 71, 56, 0.3))
+                drop-shadow(0 0 24px rgba(168, 212, 184, 0.4));
+            background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+        }
+        
+        .hero-video-img:hover {
+            transform: scale(1.05) rotate(-1deg);
+            box-shadow: 
+                0 12px 48px rgba(45, 71, 56, 0.5),
+                0 0 0 3px rgba(255, 255, 255, 0.4),
+                0 0 0 6px rgba(168, 212, 184, 0.3),
+                0 0 0 9px rgba(107, 155, 124, 0.1),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4);
+            filter: 
+                drop-shadow(0 12px 32px rgba(45, 71, 56, 0.4))
+                drop-shadow(0 0 30px rgba(168, 212, 184, 0.6));
+        }
+        
+        @keyframes videoFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg);
+            }
+            25% { 
+                transform: translateY(-6px) rotate(0.5deg);
+            }
+            50% { 
+                transform: translateY(-3px) rotate(0deg);
+            }
+            75% { 
+                transform: translateY(-9px) rotate(-0.5deg);
+            }
+        }
+        
+        /* Legacy app icon styling for compatibility */
+        .hero-icon-img {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            z-index: 2;
+            border-radius: 24px;
+            box-shadow: 
+                0 8px 32px rgba(45, 71, 56, 0.4),
+                0 0 0 3px rgba(255, 255, 255, 0.3),
+                0 0 0 6px rgba(168, 212, 184, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            animation: appIconFloat 4s ease-in-out infinite;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: 
+                drop-shadow(0 8px 24px rgba(45, 71, 56, 0.3))
+                drop-shadow(0 0 20px rgba(168, 212, 184, 0.4));
+        }
+        
+        .hero-icon-img:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 
+                0 12px 48px rgba(45, 71, 56, 0.5),
+                0 0 0 3px rgba(255, 255, 255, 0.4),
+                0 0 0 6px rgba(168, 212, 184, 0.3),
+                0 0 0 9px rgba(107, 155, 124, 0.1),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4);
+            filter: 
+                drop-shadow(0 12px 32px rgba(45, 71, 56, 0.4))
+                drop-shadow(0 0 30px rgba(168, 212, 184, 0.6));
+        }
+        
+        @keyframes appIconFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg);
+            }
+            25% { 
+                transform: translateY(-8px) rotate(1deg);
+            }
+            50% { 
+                transform: translateY(-4px) rotate(0deg);
+            }
+            75% { 
+                transform: translateY(-12px) rotate(-1deg);
+            }
         }
         
         @keyframes rotate {
@@ -1823,6 +1929,16 @@
                 font-size: 4rem;
             }
             
+            .hero-icon-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .hero-video-img {
+                width: 200px;
+                height: 113px; /* Maintain 16:9 ratio */
+            }
+            
             /* About Section Responsive */
             .about-hero {
                 grid-template-columns: 1fr;
@@ -1921,6 +2037,11 @@
                 font-size: 3rem;
             }
             
+            .hero-icon-img {
+                width: 120px;
+                height: 120px;
+            }
+            
             .visual-grid {
                 grid-template-columns: 1fr;
             }
@@ -1976,7 +2097,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>WonHeart</h2>
+                <img src="cropped-New-Logo.png" alt="WonHeart" class="nav-logo-img">
             </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
@@ -2017,10 +2138,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-card">
-                    <div class="card-glow"></div>
-                    <i class="fas fa-heart hero-icon"></i>
-                </div>
+                <img src="wonheart-video-screenshot.jpg" alt="WonHeart TV - Ancient Healing Modalities" class="hero-video-img">
             </div>
         </div>
         <div class="scroll-indicator">
