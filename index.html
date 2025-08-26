@@ -155,7 +155,6 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
             transition: width 0.3s ease;
             border-radius: var(--radius-sm);
         }
@@ -164,8 +163,77 @@
             width: 100%;
         }
         
-        .nav-link:hover {
-            color: var(--primary-green);
+        /* Individual Menu Item Colors */
+        .nav-link[href="#home"] {
+            color: #4a7c59; /* Deep Forest Green */
+        }
+        
+        .nav-link[href="#home"]:hover {
+            color: #2d4738;
+        }
+        
+        .nav-link[href="#home"]::after {
+            background: linear-gradient(90deg, #4a7c59, #2d4738);
+        }
+        
+        .nav-link[href="#about"] {
+            color: #6b9b7c; /* Sage Green */
+        }
+        
+        .nav-link[href="#about"]:hover {
+            color: #4a7c59;
+        }
+        
+        .nav-link[href="#about"]::after {
+            background: linear-gradient(90deg, #6b9b7c, #4a7c59);
+        }
+        
+        .nav-link[href="#services"] {
+            color: #d97706; /* Vibrant Orange */
+        }
+        
+        .nav-link[href="#services"]:hover {
+            color: #b45309;
+        }
+        
+        .nav-link[href="#services"]::after {
+            background: linear-gradient(90deg, #d97706, #b45309);
+        }
+        
+        .nav-link[href="#programs"] {
+            color: #3b82f6; /* Blue matching programs section */
+        }
+        
+        .nav-link[href="#programs"]:hover {
+            color: #1e40af;
+        }
+        
+        .nav-link[href="#programs"]::after {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+        }
+        
+        .nav-link[href="#wellness"] {
+            color: #9caf88; /* Sage Green */
+        }
+        
+        .nav-link[href="#wellness"]:hover {
+            color: #4a7c59;
+        }
+        
+        .nav-link[href="#wellness"]::after {
+            background: linear-gradient(90deg, #9caf88, #4a7c59);
+        }
+        
+        .nav-link[href="#contact"] {
+            color: #a8d4b8; /* Light Mint Green */
+        }
+        
+        .nav-link[href="#contact"]:hover {
+            color: #6b9b7c;
+        }
+        
+        .nav-link[href="#contact"]::after {
+            background: linear-gradient(90deg, #a8d4b8, #6b9b7c);
         }
         
         .nav-toggle {
@@ -200,7 +268,7 @@
                 rgba(107, 155, 124, 0.6) 50%,
                 rgba(45, 71, 56, 0.9) 100%
             ),
-            url('./forest-background.jpg');
+            url('./images/forest-background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -238,9 +306,11 @@
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 600;
             margin-bottom: var(--spacing-md);
-            line-height: 1.1;
+            line-height: 1.2;
             color: white;
             text-shadow: 2px 2px 4px rgba(45, 71, 56, 0.8);
+            padding-bottom: 0.2rem;
+            overflow: visible;
         }
         
         .title-line {
@@ -312,6 +382,140 @@
             box-shadow: var(--shadow-lg);
         }
         
+        /* Featured Button Styling */
+        .btn-featured {
+            padding: 1.5rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green), var(--light-green));
+            background-size: 200% 200%;
+            box-shadow: 
+                0 0 30px rgba(107, 155, 124, 0.6),
+                0 8px 32px rgba(45, 71, 56, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+            animation: 
+                featuredGlow 2s ease-in-out infinite alternate,
+                featuredGradient 3s ease-in-out infinite;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-featured::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--light-green), var(--accent-green), var(--primary-green), var(--sage-green));
+            background-size: 400% 400%;
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            animation: featuredBorder 4s ease-in-out infinite;
+            filter: blur(1px);
+        }
+        
+        .btn-featured::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn-featured:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 
+                0 0 50px rgba(107, 155, 124, 0.8),
+                0 0 100px rgba(107, 155, 124, 0.4),
+                0 16px 48px rgba(45, 71, 56, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            animation: 
+                featuredGlow 1s ease-in-out infinite alternate,
+                featuredGradient 2s ease-in-out infinite,
+                featuredPulse 0.3s ease-out;
+        }
+        
+        .btn-featured:hover::after {
+            left: 100%;
+        }
+        
+        .btn-featured i {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+            animation: playIconPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes featuredGlow {
+            0% {
+                box-shadow: 
+                    0 0 30px rgba(107, 155, 124, 0.6),
+                    0 8px 32px rgba(45, 71, 56, 0.3),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+            }
+            100% {
+                box-shadow: 
+                    0 0 50px rgba(107, 155, 124, 0.8),
+                    0 0 80px rgba(107, 155, 124, 0.3),
+                    0 12px 40px rgba(45, 71, 56, 0.4),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            }
+        }
+        
+        @keyframes featuredGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        @keyframes featuredBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        @keyframes featuredPulse {
+            0% {
+                transform: translateY(-4px) scale(1.05);
+            }
+            50% {
+                transform: translateY(-6px) scale(1.08);
+            }
+            100% {
+                transform: translateY(-4px) scale(1.05);
+            }
+        }
+        
+        @keyframes playIconPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
         .btn-secondary {
             background: rgba(255, 255, 255, 0.15);
             color: white;
@@ -338,7 +542,10 @@
         
         .hero-visual {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            gap: var(--spacing-lg);
             animation: slideInRight 1s ease-out 0.6s both;
         }
         
@@ -568,7 +775,7 @@
            ============================================ */
         
         .about {
-            padding: var(--spacing-xl) var(--spacing-sm);
+            padding: var(--spacing-xl) var(--spacing-sm) 0;
             background: var(--soft-cream);
         }
         
@@ -1178,7 +1385,7 @@
         
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: var(--spacing-xl);
             align-items: stretch;
         }
@@ -1210,6 +1417,13 @@
         }
         
         .text-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .text-card h4 {
             font-family: var(--font-heading);
             font-size: 1.5rem;
             color: var(--primary-green);
@@ -1265,6 +1479,296 @@
         .card-2 { animation-delay: 0.2s; }
         .card-3 { animation-delay: 0.3s; }
         .card-4 { animation-delay: 0.4s; }
+        
+        /* ============================================
+           PROGRAMS SECTION - PROFESSIONAL BUSINESS DESIGN
+           ============================================ */
+        
+        .programs-section {
+            padding: var(--spacing-xl) 0;
+            margin: 0;
+            background: linear-gradient(
+                135deg, 
+                rgba(30, 90, 150, 0.4) 0%, 
+                rgba(70, 130, 180, 0.3) 50%,
+                rgba(40, 100, 160, 0.5) 100%
+            ),
+            url('./images/ocean-waves-texture.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            overflow: hidden;
+        }
+        
+        .programs-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 90, 150, 0.1);
+            backdrop-filter: blur(0.5px);
+            z-index: 1;
+        }
+        
+        .programs-section-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+        
+        .programs-section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .programs-section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: white;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+        }
+        
+        .programs-section-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .program-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            text-align: left;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .program-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .program-icon-container {
+            flex-shrink: 0;
+            position: relative;
+        }
+        
+        .program-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .program-icon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background: rgba(74, 124, 89, 0.9);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover .program-icon-overlay {
+            opacity: 1;
+        }
+        
+        .program-icon-overlay i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .program-header-content {
+            flex: 1;
+        }
+        
+        .program-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--forest-dark);
+            margin: 0 0 var(--spacing-xs) 0;
+            font-weight: 600;
+        }
+        
+        .program-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .program-card p {
+            color: var(--soft-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* Program Action Buttons */
+        .program-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 152, 0, 0.2);
+        }
+        
+        .program-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            text-align: left;
+            justify-content: flex-start;
+        }
+        
+        .program-action-btn i {
+            font-size: 0.9rem;
+            min-width: 16px;
+            flex-shrink: 0;
+        }
+        
+        .program-action-btn span {
+            flex-grow: 1;
+        }
+        
+        /* Download Button */
+        .download-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-color: #10b981;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .download-btn i {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* CD Button */
+        .cd-btn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border-color: #f59e0b;
+        }
+        
+        .cd-btn:hover {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cd-btn i {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Video Button */
+        .video-btn {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border-color: #dc2626;
+        }
+        
+        .video-btn:hover {
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .video-btn i {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Hover Effects */
+        .program-action-btn:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Responsive design for programs */
+        @media (max-width: 768px) {
+            .program-item {
+                grid-template-columns: 1fr;
+                grid-template-rows: 150px 1fr;
+            }
+            
+            .program-image-container {
+                width: 100%;
+                height: 150px;
+            }
+            
+            .program-content {
+                padding: var(--spacing-md);
+            }
+            
+            .program-content h4 {
+                font-size: 1.5rem;
+            }
+            
+            .program-actions {
+                gap: var(--spacing-xs);
+                margin-top: var(--spacing-md);
+                padding-top: var(--spacing-md);
+            }
+            
+            .program-action-btn {
+                padding: 0.625rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
         
         /* ============================================
            RESOURCES SECTION
@@ -1486,6 +1990,7 @@
         .team {
             padding: var(--spacing-xl) var(--spacing-sm);
             background: var(--warm-white);
+            margin-top: -var(--spacing-xl);
         }
         
         .team-grid {
@@ -1595,53 +2100,150 @@
         }
         
         /* ============================================
-           CALL TO ACTION SECTION
+           WELLNESS TIPS SECTION
            ============================================ */
         
-        .cta {
+        .wellness-tips {
             padding: var(--spacing-xl) var(--spacing-sm);
             background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
             color: white;
         }
         
-        .cta-content {
-            text-align: center;
-            max-width: 800px;
+        .wellness-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            max-width: var(--container-max);
             margin: 0 auto;
         }
         
-        .cta-text h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .cta-text p {
-            font-size: 1.125rem;
-            margin-bottom: var(--spacing-lg);
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
+        .wellness-column {
             display: flex;
-            gap: var(--spacing-sm);
+            flex-direction: column;
+        }
+        
+        .wellness-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .wellness-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .wellness-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            margin: 0 auto var(--spacing-md);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
         
-        .cta .btn-primary {
-            background: white;
-            color: var(--primary-green);
-        }
-        
-        .cta .btn-outline {
-            border-color: white;
+        .wellness-icon i {
+            font-size: 2rem;
             color: white;
         }
         
-        .cta .btn-outline:hover {
-            background: white;
-            color: var(--primary-green);
+        .wellness-header h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: 1px;
+        }
+        
+        .wellness-header h4 {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .wellness-content {
+            flex: 1;
+            line-height: 1.7;
+        }
+        
+        .wellness-content p {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.95;
+        }
+        
+        .wellness-list {
+            margin: var(--spacing-md) 0;
+            padding-left: var(--spacing-md);
+        }
+        
+        .wellness-list li {
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .wellness-conclusion {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border-left: 4px solid rgba(255, 255, 255, 0.4);
+            font-style: italic;
+            margin-top: var(--spacing-md);
+        }
+        
+        .wellness-action {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-wellness {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 0.875rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+        }
+        
+        .btn-wellness:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.15),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-wellness i {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         
         /* ============================================
@@ -2017,9 +2619,17 @@
                 justify-content: center;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .wellness-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .wellness-header h3 {
+                font-size: 1.25rem;
+            }
+            
+            .wellness-header h4 {
+                font-size: 1rem;
             }
         }
         
@@ -2090,6 +2700,11 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--forest-dark);
         }
+        
+        /* Hidden sections */
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -2097,13 +2712,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="cropped-New-Logo.png" alt="WonHeart" class="nav-logo-img">
+                <img src="images/cropped-New-Logo.png" alt="WonHeart" class="nav-logo-img">
             </div>
             <div class="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Videos</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#team" class="nav-link">Team</a>
+                <a href="#programs" class="nav-link">Past Programs</a>
+                <a href="#wellness" class="nav-link">Wellness</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle">
@@ -2124,21 +2740,17 @@
                     <span class="title-line accent">Change Reaction</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Our Mission is to <strong>Educate</strong>, <strong>Inspire</strong> and <strong>Transform</strong> YOU to become The Best You through holistic wellness, Reiki healing, and mindful living.
+                    WonHeart has been inspiring change since 2010—beginning with school assemblies that wove non-violent communication into music and events, evolving into powerful women-led conversations during the 2020 shutdown, and today reaching people worldwide through holistic wellness, Reiki healing, mindful living, and transformative interviews. Our mission is simple yet bold: to <strong>Educate</strong>, <strong>Inspire</strong>, and <strong>Transform</strong> YOU into your best self—because change begins within, and the time is now to remember who we truly are.
                 </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <i class="fas fa-play"></i>
-                        Start Your Journey
-                    </button>
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-heart"></i>
-                        Learn More
-                    </button>
-                </div>
             </div>
             <div class="hero-visual">
-                <img src="wonheart-video-screenshot.jpg" alt="WonHeart TV - Ancient Healing Modalities" class="hero-video-img">
+                <img src="images/wonheart-video-screenshot.jpg" alt="WonHeart TV - Ancient Healing Modalities" class="hero-video-img">
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-featured">
+                        <i class="fas fa-play"></i>
+                        LATEST YOUTUBE VIDEO
+                    </button>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -2146,6 +2758,57 @@
                 <div class="wheel"></div>
             </div>
             <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Inspiring Video Interviews Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Inspiring Video Interviews</h2>
+                <p class="section-subtitle">Comprehensive wellness solutions for your transformation journey</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Body Health</h3>
+                    <p>Discover holistic approaches to physical wellness and body healing. Learn about natural health practices, movement therapies, and integrative medicine that support your body's innate ability to heal and thrive.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Physical Wellness</span>
+                        <span class="feature-tag">Natural Healing</span>
+                        <span class="feature-tag">Movement Therapy</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Planet Health</h3>
+                    <p>Explore the vital connection between environmental health and personal wellness. Learn how caring for our planet directly impacts our own health and discover sustainable living practices for a healthier world.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Environmental Health</span>
+                        <span class="feature-tag">Sustainable Living</span>
+                        <span class="feature-tag">Eco-Wellness</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Children's Health</h3>
+                    <p>Supporting comprehensive children's health and development in our modern world. Expert guidance on physical, mental, and emotional wellbeing for children and adolescents, empowering parents and caregivers with holistic health approaches.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Child Development</span>
+                        <span class="feature-tag">Holistic Health</span>
+                        <span class="feature-tag">Family Wellness</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2173,88 +2836,78 @@
                     </div>
                 </div>
                 
-                <div class="visual-section">
-                    <div class="visual-grid">
-                        <div class="visual-card card-1">
-                            <i class="fas fa-heart"></i>
-                            <h4>Holistic Wellness</h4>
-                        </div>
-                        <div class="visual-card card-2">
-                            <i class="fas fa-hands"></i>
-                            <h4>Reiki Healing</h4>
-                        </div>
-                        <div class="visual-card card-3">
-                            <i class="fas fa-microphone"></i>
-                            <h4>Inspiring Interviews</h4>
-                        </div>
-                        <div class="visual-card card-4">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h4>Educational Resources</h4>
-                        </div>
-                    </div>
-                </div>
             </div>
-            
+        </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive wellness solutions for your transformation journey</p>
+    <!-- Past Programs Section -->
+    <section id="programs" class="programs-section">
+        <div class="programs-section-inner">
+            <div class="programs-section-header">
+                <h2 class="programs-section-title">Past Programs</h2>
+                <p class="programs-section-subtitle">WonHeart's educational and transformative programs that inspired our community from 2010-2020</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hands"></i>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon-container">
+                            <img src="images/acting.jpg" alt="Acting Program" class="program-image">
+                            <div class="program-icon-overlay">
+                                <i class="fas fa-theater-masks"></i>
+                            </div>
+                        </div>
+                        <div class="program-header-content">
+                            <h4>Acting</h4>
+                        </div>
                     </div>
-                    <h3>Reiki Healing</h3>
-                    <p>Experience the transformative power of Reiki healing, a modality that can help heal trauma and promote deep wellness through energy work and intuitive healing practices.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">Energy Healing</span>
-                        <span class="feature-tag">Trauma Recovery</span>
-                        <span class="feature-tag">Spiritual Wellness</span>
-                    </div>
+                    <p>By using theater at the Juvenile Hall, WonHeart has found many benefits for teens to act out their feelings in a safe and caring way. It's important for them to have a voice where they can be free to express themselves or put a new story to something they've done.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-microphone"></i>
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon-container">
+                            <img src="images/character.jpg" alt="Character Building Program" class="program-image">
+                            <div class="program-icon-overlay">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="program-header-content">
+                            <h4>Character Building</h4>
+                        </div>
                     </div>
-                    <h3>Wellness Interviews</h3>
-                    <p>Inspiring conversations with experts in health, wellness, and personal development. Learn from practitioners who share their knowledge to help you on your wellness journey.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">Expert Insights</span>
-                        <span class="feature-tag">Live Sessions</span>
-                        <span class="feature-tag">Educational Content</span>
-                    </div>
+                    <p>WonHeart created several character building assemblies including "I'm Amazing You're Amazing" and "From Bully to Peacemaker" using original music with non-violent tools built-in. Interactive and engaging programs with tools for teachers.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-child"></i>
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon-container">
+                            <img src="images/music.jpg" alt="Music Program" class="program-image">
+                            <div class="program-icon-overlay">
+                                <i class="fas fa-music"></i>
+                            </div>
+                        </div>
+                        <div class="program-header-content">
+                            <h4>Music</h4>
+                        </div>
                     </div>
-                    <h3>Children's Mental Health</h3>
-                    <p>Supporting children's mental health and development, especially in the post-COVID world. Expert guidance on child and adolescent development for parents and caregivers.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">Child Development</span>
-                        <span class="feature-tag">Mental Health Support</span>
-                        <span class="feature-tag">Family Wellness</span>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3>Educational Resources</h3>
-                    <p>Access our library of self-care tips, healthy recipes, breathing techniques, and literacy programs designed to empower your personal growth and wellness journey.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">Self-Care Guides</span>
-                        <span class="feature-tag">Healthy Living</span>
-                        <span class="feature-tag">Personal Growth</span>
+                    <p>Music is a big part of WonHeart. This picture was from a live show created for Santa Maria's 15th Annual Peace Week. When children show by example, our hope is adults will follow.</p>
+                    
+                    <div class="program-actions">
+                        <a href="images/How-to-tips-for-Video.pdf" class="program-action-btn download-btn" target="_blank">
+                            <i class="fas fa-download"></i>
+                            <span>Download How to Tips</span>
+                        </a>
+                        
+                        <a href="https://joelynlutz.bandcamp.com/album/peacemaker" class="program-action-btn cd-btn" target="_blank">
+                            <i class="fas fa-compact-disc"></i>
+                            <span>Buy the CD</span>
+                        </a>
+                        
+                        <a href="https://youtu.be/fuiyB2QGdDM?si=Q5kaec2k97wfoC1N" class="program-action-btn video-btn" target="_blank">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch Stop Breathe Choose Differently</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2262,7 +2915,7 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="team">
+    <section id="team" class="team hidden">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Meet Our Practitioners</h2>
@@ -2349,23 +3002,74 @@
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta">
+    <!-- Wellness Tips Section -->
+    <section id="wellness" class="wellness-tips">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2>Ready to Start Your Change Reaction?</h2>
-                    <p>The Time Is NOW To Remember Who We Are! Join our community and begin your transformation journey today.</p>
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Foundations of Everyday Wellness</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Essential practices for a healthier, more balanced life</p>
+            </div>
+            
+            <div class="wellness-grid">
+                <div class="wellness-column">
+                    <div class="wellness-card">
+                        <div class="wellness-header">
+                            <div class="wellness-icon">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <h3>HEALTHY EATING</h3>
+                            <h4>Why Eat Healthy?</h4>
+                        </div>
+                        <div class="wellness-content">
+                            <p>Americans are known to have one of the poorest diets compared to other countries, with high rates of diabetes, heart conditions, and autoimmune diseases. This is a deadly combination, and WonHeart is passionate about helping our beloved human family change that. Here are a few recommendations to build a healthier life.</p>
+                            
+                            <ol class="wellness-list">
+                                <li>Get rid of processed foods and return to fresh vegetables, fruits, and limited meats.</li>
+                                <li>Reduce sugar to less than 1 gram whenever possible. By reading labels you'll be amazed how much sugar hides in your favorite foods.</li>
+                                <li>Most breads are loaded with sugar and no longer made from the original grains our grandparents ate, which were easier to digest. For a healthy gut, try gluten-free or organic corn products and avoid GMO foods.</li>
+                                <li>An absolute must is eliminating dairy. Cheese, eggs, and cow's milk aren't meant for human consumption past a certain point. Fortunately, alternatives like Rice, Almond, or Coconut milk and Goat cheese are easy replacements.</li>
+                            </ol>
+                            
+                            <p class="wellness-conclusion">Start simple by cutting sugar, then gradually remove other foods to see how they affect you. A healthy gut is the most important thing you can do for your body, and the benefits are incredible. You'll feel lighter, gain more energy, and stop that foggy brain from running your life.</p>
+                            
+                            <div class="wellness-action">
+                                <a href="#" class="btn-wellness">
+                                    <i class="fas fa-apple-alt"></i>
+                                    View Videos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="cta-buttons">
-                    <button class="btn btn-primary">
-                        <i class="fas fa-calendar"></i>
-                        Schedule Consultation
-                    </button>
-                    <button class="btn btn-outline">
-                        <i class="fab fa-youtube"></i>
-                        Watch WonHeart TV
-                    </button>
+                
+                <div class="wellness-column">
+                    <div class="wellness-card">
+                        <div class="wellness-header">
+                            <div class="wellness-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h3>BREATHING TECHNIQUES</h3>
+                            <h4>Why Do Breathing Exercises?</h4>
+                        </div>
+                        <div class="wellness-content">
+                            <p>Experts say Americans face extreme stress today. Living in constant "fight or flight" mode causes shallow breathing, which fuels anxiety, depression, and a lack of the natural healing chemicals our brains need to restore balance.</p>
+                            
+                            <p>WonHeart recommends a simple practice called The Wim Hof Breathing Technique. Done daily, it can expand lung capacity, refresh red and white blood cells, and activate the body's defense systems against viruses, depression, and more. Instead of relying only on medications, try this method to create lasting change.</p>
+                            
+                            <p>Other practices such as alternate nostril breathing, box breathing, or slow mindful breaths can be used anytime. Just three minutes can calm racing thoughts, reset the nervous system, and provide clarity.</p>
+                            
+                            <p>Taking deep breaths during the day eases stressful moments, while practicing at bedtime helps those who struggle to sleep. Over time, breathwork may also lower blood pressure, improve focus, and aid digestion by signaling the body to relax.</p>
+                            
+                            <p class="wellness-conclusion">Breathing is a free tool we all carry, yet often overlook. With daily practice you may notice better energy, deeper rest, and more emotional balance. Small habits like mindful breathing can spark major transformation.</p>
+                            
+                            <div class="wellness-action">
+                                <a href="#" class="btn-wellness">
+                                    <i class="fas fa-wind"></i>
+                                    View Videos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2457,19 +3161,11 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Videos</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Team</a></li>
+                        <li><a href="#programs">Past Programs</a></li>
+                        <li><a href="#wellness">Wellness</a></li>
                         <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Reiki Healing</a></li>
-                        <li><a href="#">Wellness Interviews</a></li>
-                        <li><a href="#">Children's Mental Health</a></li>
-                        <li><a href="#">Educational Resources</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
