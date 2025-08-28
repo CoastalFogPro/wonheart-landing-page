@@ -981,43 +981,6 @@
             50% { transform: scale(1.1); }
         }
         
-        .scroll-indicator {
-            position: absolute;
-            bottom: var(--spacing-md);
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            animation: fadeInUp 1s ease-out 1.2s both;
-        }
-        
-        .mouse {
-            width: 24px;
-            height: 40px;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
-            margin: 0 auto var(--spacing-xs);
-            position: relative;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .wheel {
-            width: 3px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 2px;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scroll 2s infinite;
-        }
-        
-        @keyframes scroll {
-            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(16px); }
-        }
         
         /* ============================================
            SECTION STYLES
@@ -2866,6 +2829,11 @@
                 height: 113px; /* Maintain 16:9 ratio */
             }
             
+            .hero-visual {
+                gap: var(--spacing-md);
+                margin-bottom: var(--spacing-xl);
+            }
+            
             /* About Section Responsive */
             .about-hero {
                 grid-template-columns: 1fr;
@@ -3157,6 +3125,7 @@
             .faq-answer.active {
                 padding: 0 var(--spacing-sm) var(--spacing-sm);
             }
+            
         }
     </style>
 </head>
@@ -3216,12 +3185,6 @@
                         </a>
                     </div>
                 </aside>
-            </div>
-            <div class="scroll-indicator" role="presentation" aria-label="Scroll down to explore more content">
-                <div class="mouse" aria-hidden="true">
-                    <div class="wheel"></div>
-                </div>
-                <p>Scroll to explore</p>
             </div>
         </section>
     </main>
@@ -3501,9 +3464,15 @@
     <section id="faq" class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" style="color: var(--primary-green);">Frequently Asked Questions</h2>
+                <h2 class="section-title" style="color: var(--primary-green); position: relative;">Frequently Asked Questions</h2>
                 <p class="section-subtitle">Get answers to common questions about holistic wellness, Reiki healing, and our services</p>
             </div>
+            
+            <style>
+                #faq .section-title::after {
+                    display: none;
+                }
+            </style>
             
             <div class="faq-grid">
                 <div class="faq-category">
