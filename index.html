@@ -367,7 +367,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.95); /* Pure white background */
             backdrop-filter: blur(20px);
             z-index: 1000;
             padding: var(--spacing-sm) 0;
@@ -376,7 +376,7 @@
         }
         
         .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.98); /* Pure white background */
             box-shadow: var(--shadow-sm);
             padding: var(--spacing-xs) 0;
         }
@@ -437,9 +437,9 @@
             width: 100%;
         }
         
-        /* Individual Menu Item Colors */
+        /* Individual Menu Item Colors - Sampled from corresponding sections */
         .nav-link[href="#home"] {
-            color: #4a7c59; /* Deep Forest Green */
+            color: #4a7c59; /* Deep Forest Green - from hero section */
         }
         
         .nav-link[href="#home"]:hover {
@@ -450,64 +450,76 @@
             background: linear-gradient(90deg, #4a7c59, #2d4738);
         }
         
-        .nav-link[href="#about"] {
-            color: #6b9b7c; /* Sage Green */
-        }
-        
-        .nav-link[href="#about"]:hover {
-            color: #4a7c59;
-        }
-        
-        .nav-link[href="#about"]::after {
-            background: linear-gradient(90deg, #6b9b7c, #4a7c59);
-        }
-        
         .nav-link[href="#services"] {
-            color: #d97706; /* Vibrant Orange */
+            color: #8E6782; /* Purple from services section icons */
         }
         
         .nav-link[href="#services"]:hover {
-            color: #b45309;
+            color: #7A5A70;
         }
         
         .nav-link[href="#services"]::after {
-            background: linear-gradient(90deg, #d97706, #b45309);
+            background: linear-gradient(90deg, #8E6782, #7A5A70);
+        }
+        
+        .nav-link[href="#about"] {
+            color: #F67E7D; /* Coral from about section */
+        }
+        
+        .nav-link[href="#about"]:hover {
+            color: #E56B6A;
+        }
+        
+        .nav-link[href="#about"]::after {
+            background: linear-gradient(90deg, #F67E7D, #E56B6A);
         }
         
         .nav-link[href="#programs"] {
-            color: #3b82f6; /* Blue matching programs section */
+            color: #4682B4; /* Steel blue from programs section background */
         }
         
         .nav-link[href="#programs"]:hover {
-            color: #1e40af;
+            color: #2E5984;
         }
         
         .nav-link[href="#programs"]::after {
-            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            background: linear-gradient(90deg, #4682B4, #2E5984);
         }
         
         .nav-link[href="#wellness"] {
-            color: #9caf88; /* Sage Green */
+            color: #F67E7D; /* Coral from wellness section background */
         }
         
         .nav-link[href="#wellness"]:hover {
-            color: #4a7c59;
+            color: #E56B6A;
         }
         
         .nav-link[href="#wellness"]::after {
-            background: linear-gradient(90deg, #9caf88, #4a7c59);
+            background: linear-gradient(90deg, #F67E7D, #E56B6A);
         }
         
-        .nav-link[href="#contact"] {
-            color: #a8d4b8; /* Light Mint Green */
+        .nav-link[href="#faq"] {
+            color: #4a7c59; /* Green from FAQ section title */
         }
         
-        .nav-link[href="#contact"]:hover {
-            color: #6b9b7c;
+        .nav-link[href="#faq"]:hover {
+            color: #2d4738;
         }
         
-        .nav-link[href="#contact"]::after {
-            background: linear-gradient(90deg, #a8d4b8, #6b9b7c);
+        .nav-link[href="#faq"]::after {
+            background: linear-gradient(90deg, #4a7c59, #2d4738);
+        }
+        
+        .nav-link[href="#footer"] {
+            color: #843B62; /* Purple from footer background */
+        }
+        
+        .nav-link[href="#footer"]:hover {
+            color: #6D2C4F;
+        }
+        
+        .nav-link[href="#footer"]::after {
+            background: linear-gradient(90deg, #843B62, #6D2C4F);
         }
         
         .nav-toggle {
@@ -3161,7 +3173,8 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#programs" class="nav-link">Past Programs</a>
                 <a href="#wellness" class="nav-link">Wellness</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#footer" class="nav-link">Connect</a>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -3833,7 +3846,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -3848,7 +3861,8 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#programs">Past Programs</a></li>
                         <li><a href="#wellness">Wellness</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#footer">Connect</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
