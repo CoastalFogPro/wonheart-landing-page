@@ -390,7 +390,7 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             border-radius: var(--radius-lg);
-            background: linear-gradient(135deg, var(--primary-green), var(--accent-green), var(--light-green));
+            background: linear-gradient(135deg, #5b5f9a, #6b70a8, #7b80b6);
             background-size: 200% 200%;
             box-shadow: 
                 0 0 30px rgba(107, 155, 124, 0.6),
@@ -411,7 +411,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, var(--light-green), var(--accent-green), var(--primary-green), var(--sage-green));
+            background: linear-gradient(45deg, #7b80b6, #6b70a8, #5b5f9a, #4b4f8a);
             background-size: 400% 400%;
             border-radius: var(--radius-lg);
             z-index: -1;
@@ -433,9 +433,9 @@
         .btn-featured:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 
-                0 0 50px rgba(107, 155, 124, 0.8),
-                0 0 100px rgba(107, 155, 124, 0.4),
-                0 16px 48px rgba(45, 71, 56, 0.4),
+                0 0 50px rgba(91, 95, 154, 0.8),
+                0 0 100px rgba(91, 95, 154, 0.4),
+                0 16px 48px rgba(75, 79, 138, 0.4),
                 inset 0 2px 0 rgba(255, 255, 255, 0.3);
             animation: 
                 featuredGlow 1s ease-in-out infinite alternate,
@@ -456,15 +456,15 @@
         @keyframes featuredGlow {
             0% {
                 box-shadow: 
-                    0 0 30px rgba(107, 155, 124, 0.6),
-                    0 8px 32px rgba(45, 71, 56, 0.3),
+                    0 0 30px rgba(91, 95, 154, 0.6),
+                    0 8px 32px rgba(75, 79, 138, 0.3),
                     inset 0 2px 0 rgba(255, 255, 255, 0.2);
             }
             100% {
                 box-shadow: 
-                    0 0 50px rgba(107, 155, 124, 0.8),
-                    0 0 80px rgba(107, 155, 124, 0.3),
-                    0 12px 40px rgba(45, 71, 56, 0.4),
+                    0 0 50px rgba(91, 95, 154, 0.8),
+                    0 0 80px rgba(91, 95, 154, 0.3),
+                    0 12px 40px rgba(75, 79, 138, 0.4),
                     inset 0 2px 0 rgba(255, 255, 255, 0.3);
             }
         }
